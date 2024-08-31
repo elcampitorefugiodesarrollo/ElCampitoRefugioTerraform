@@ -1,11 +1,11 @@
 module "frontend_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  version = "4.1.2"
-  bucket = "el-campito-refugio-${var.environment_name}-frontend"
+  source                   = "terraform-aws-modules/s3-bucket/aws"
+  version                  = "4.1.2"
+  bucket                   = "el-campito-refugio-${var.environment_name}-frontend"
   control_object_ownership = true
   object_ownership         = "BucketOwnerEnforced"
-  attach_policy = true
-  policy = <<EOF
+  attach_policy            = true
+  policy                   = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -66,7 +66,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   price_class = "PriceClass_100"
 
   # En el futuro confirmar que solo se sirve de argentina para restringir paises donde no es relevante el contenido
-    
+
   restrictions {
     geo_restriction {
       restriction_type = "none"

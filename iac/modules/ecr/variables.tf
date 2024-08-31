@@ -1,9 +1,9 @@
 variable "repository_name" {
-  type = string
+  type        = string
   description = "El nombre del repositorio a crear"
 }
 
 variable "repository_description" {
-  type = string
+  type        = string
   description = "La descripcion del repositorio a crear"
 }

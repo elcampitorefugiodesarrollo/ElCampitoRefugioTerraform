@@ -21,7 +21,7 @@ resource "aws_iam_role" "github-actions" {
       },
     ]
   })
-    managed_policy_arns = []
+  managed_policy_arns = []
 }
 
 resource "aws_iam_policy" "ecr_push" {
@@ -36,12 +36,12 @@ resource "aws_iam_policy" "ecr_push" {
     Statement = [
       {
         Action = [
-                "ecr-public:CompleteLayerUpload",
-                "ecr-public:UploadLayerPart",
-                "ecr-public:InitiateLayerUpload",
-                "ecr-public:BatchCheckLayerAvailability",
-                "ecr-public:PutImage"
-            ]
+          "ecr-public:CompleteLayerUpload",
+          "ecr-public:UploadLayerPart",
+          "ecr-public:InitiateLayerUpload",
+          "ecr-public:BatchCheckLayerAvailability",
+          "ecr-public:PutImage"
+        ]
         Effect   = "Allow"
         Resource = "*"
       },

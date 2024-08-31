@@ -1,7 +1,7 @@
 module "state_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  version = "4.1.2"
-  bucket = "el-campito-refugio-terraform-state"
+  source                   = "terraform-aws-modules/s3-bucket/aws"
+  version                  = "4.1.2"
+  bucket                   = "el-campito-refugio-terraform-state"
   control_object_ownership = true
   object_ownership         = "BucketOwnerEnforced"
   versioning = {

@@ -10,3 +10,12 @@ Crear el ambiente corriendo el script `scripts/crear_ambiente.sh` e ingresando e
 El script valida las dependencias, crea el archivo para el la configuracion del backend en S3 y crea el archivo versions.tf y finalmente inicializa terraform.
 
 Una vez validada la estructura, se recomienda crear un commit.
+
+# Subir nueva imagen a ECR
+Requerimientos
+- Credenciales IAM
+- Tu usuario de IAM tiene que estar en el archivo `modules/ecr/main.tf`. Busca la referencia con "@REF:1" (ctrl+f)
+
+Procedimiento (Windows WSL2)
+- `aws ecr-public get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin public.ecr.aws`
+- `sudo docker push la-imagen`
